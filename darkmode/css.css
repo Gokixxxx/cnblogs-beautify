@@ -1199,8 +1199,8 @@ a.c_b_p_desc_readmore{text-decoration:none;}
 
 /* 修改所有表格的背景和字体颜色 */
 table {
-  background-color: blue !important;
-  color: black !important;
+  background-color: #1f2040 !important;
+  color: #74759b !important;
 }
 
 /* 表格整体无边框，统一字体颜色 */
