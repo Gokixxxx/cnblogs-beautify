@@ -1,4 +1,4 @@
-# cnblogs-beautify
+# cnblogs-beautify (darkmode)
 beautify www.cnblogs.com
 
 update:  
@@ -10,3 +10,5 @@ update:
     - 修复了侧边栏部分信息有时缺失的问题
     - 去除加载时的默认背景图，避免填入随机图片时闪烁
 
+- 2026-05-18
+  - 添加了暗色风格的主题。
