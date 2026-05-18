@@ -1293,6 +1293,9 @@ table {
 }
 
 /*评论上方的一块*/
+#blog_post_info_block {
+  font-size: 8px;
+}
 #blog_post_info_block a{
   text-decoration:none;
 }
@@ -1418,8 +1421,11 @@ table {
   width:50px;
   margin:0px;
 }
-.diggword{
-  word-wrap:break-word;
+.diggword {
+  word-wrap: break-word;
+  color: #41b349;
+  font-size: 12px;
+  text-align: center;
 }
 .buryit{
   display:none;

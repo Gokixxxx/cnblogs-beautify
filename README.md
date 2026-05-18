@@ -1,4 +1,4 @@
-# cnblogs-beautify (darkmode)
+# cnblogs-beautify
 beautify www.cnblogs.com
 
 update:  
@@ -13,8 +13,8 @@ update:
 
 - 2026-05-18 
   
-  Gokix:
+  Gokix: (darkmode)
   
   - 添加了暗色风格的主题。
-  - /darkmode下是暗色风格主题，/original是原本的文件
+  - /darkmode下是暗色风格主题，/src是原本的主题
 
