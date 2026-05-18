@@ -85,8 +85,9 @@ blockquote{
 
 /*博客标题与导航栏部分*/
 
+/*这个颜色目前只有统计评论数用*/
 .blogStats{
-  color:#a41213;
+  color:#ccccd6;
 }
 
 /*标题颜色*/
@@ -1574,7 +1575,7 @@ table {
 .ShowAndHideButton:hover{
 	width:70px;
 	height:40px;
-	background-color:orangered;
+	background-color:#5c3719;
 }
 
 .AlwaysHideButton{
