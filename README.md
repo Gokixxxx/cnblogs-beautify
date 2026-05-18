@@ -15,6 +15,6 @@ update:
   
   Gokix: (darkmode)
   
-  - 添加了暗色风格的主题。
+  - 添加了暗色风格的主题。[效果](https://www.cnblogs.com/Gokix)
   - /darkmode下是暗色风格主题，/src是原本的主题
 
