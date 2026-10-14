@@ -719,6 +719,12 @@ li.narrowTopmenuUlproperty:hover > a{
   width:30px;
   height:30px;
 }
+/*月份标题行（含"2026年10月"和左右翻页箭头）：不受上面 30px 格宽限制，防止文字换行*/
+#blog-calendar .CalTitle td{
+  width:auto;
+  height:auto;
+  white-space:nowrap;
+}
 table {
     border-collapse: collapse;
     border-spacing: 0;
@@ -729,11 +735,19 @@ table {
 }
 /*当前天*/
 .CalTodayDay{
-  background-color:#3671a5;
+  background-color:#b78b26;
   border-radius:100%;
   font-weight:bold;
   margin:0px;
   padding:0px;
+  color:#f6dead;
+  text-shadow:0px 0px 6px #f6dead;
+  box-shadow:0px 0px 8px rgba(251,185,87,0.45);
+}
+/*今日若带链接（当天有博文），链接文字也用同一颜色*/
+.CalTodayDay a{
+  color:#f6dead;
+  text-shadow:0px 0px 6px #f6dead;
 }
 
 /*最新评论*/
