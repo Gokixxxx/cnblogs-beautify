@@ -127,4 +127,15 @@
 	<!--- /div -->
 </div>
 
+<!--- 自定义"关注我"按钮，样式见 css 中的 #followMe；onclick 里的 GUID 不要改 -->
+<a href="javascript:void(0)" onclick="follow('b9ab9dc5-75fd-4c72-49cd-08d7abbfa4af')" id="followMe" style="display:none;">关注我</a>
+<script>
+/*只在文章页显示右下角"关注我"按钮（首页没有 #post_detail）*/
+document.addEventListener('DOMContentLoaded', function(){
+	if(document.getElementById('post_detail')){
+		document.getElementById('followMe').style.display='';
+	}
+});
+</script>
+
 
