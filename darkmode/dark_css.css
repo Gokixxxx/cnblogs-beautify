@@ -1264,6 +1264,12 @@ table {
 /**********************文章尾部************/
 
 /*评论区*/
+/*"发表评论"标题左侧的图标：默认皮肤用的是 16x16 的模糊 GIF，这里换成 12 倍大的自定义 PNG，缩放到 16px 显示以获得清晰效果*/
+#commentform_title{
+	background-image:url('https://pic.imgdd.cc/i/034feek19cTioKDt0kR1Qg.png') !important;
+	background-size:16px 16px;
+	background-repeat:no-repeat;
+}
 .commentbox_main{
   background-color:#1E3B7A;
 }
