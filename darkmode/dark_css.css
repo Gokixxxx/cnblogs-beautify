@@ -1298,9 +1298,12 @@ table {
   color:#6699FF;
 }
 
-/*评论上方的一块*/
+/*评论上方的一块（分类/标签/免责声明/头像区域），顶部加暗色分割线与正文隔开*/
 #blog_post_info_block {
   font-size: 8px;
+  border-top:1px solid #333;
+  padding-top:15px;
+  margin-top:25px;
 }
 #blog_post_info_block a{
   text-decoration:none;
@@ -1468,6 +1471,19 @@ table {
 }
 .buryit{
   display:none;
+}
+
+/*文章末尾的"好文要顶/关注我/收藏该文/微信分享"一整排（绿色快捷通道），整体隐藏。
+  注意不影响右下角自定义的"关注我"按钮（#followMe 是独立元素）*/
+#green_channel{
+  display:none;
+}
+
+/*文章末尾的免责声明下方留出间距，与下面的头像区域隔开（分割线颜色与背景一致，不可见）*/
+.post-meta-disclaimer{
+  border-bottom:1px solid #0f1423;
+  padding-bottom:10px;
+  margin-bottom:12px;
 }
 
 /*************************************/
