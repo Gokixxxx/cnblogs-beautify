@@ -1679,14 +1679,17 @@ table {
 
 .jump_OJ {
     width: 141px;
-    background-color: #ffffffba;
+    background-color: #232323ba;
+    color: #EEEEEE;
 }
 .jump_ID {
     width: 136px;
-    background-color: #ffffffba;
+    background-color: #232323ba;
+    color: #EEEEEE;
 }
 .jump_goto {
-    background-color: #ffffffba;
+    background-color: #232323ba;
+    color: #EEEEEE;
     font-family: "Comic Sans MS", cursive, sans-serif;
     width: 70px;
 }/*跳题*/
