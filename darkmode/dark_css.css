@@ -306,7 +306,7 @@ li.others:hover > a{
 	top:55px;
 	z-index:100000;
 /*	background-color:#FCFDFDFD;*/
-	background-color:#FFFFFF;
+	background-color:#141213;
 /*	
 	border:2.8px solid rgba(20,23,34,0.8);
 	border-top:0px;
@@ -339,10 +339,10 @@ li.others:hover > a{
 	font-size:14px;
 }
 li.narrowTopmenuUlproperty:hover{
-	background-color:#DCDCDC !important;
+	background-color:#232323 !important;
 }
 li.narrowTopmenuUlproperty:hover > a{
-	color:#1a1a1a !important;
+	color:#1ba784 !important;
 }
 
 /*搜索框*/
