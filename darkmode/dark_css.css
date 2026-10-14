@@ -464,7 +464,6 @@ li.narrowTopmenuUlproperty:hover > a{
 	-webkit-background-size:cover;
 	-o-background-size:cover;
 	-moz-background-size:cover;
-	vertical-align:middle;
 }
 #myTitle{
 	position:absolute;
@@ -681,7 +680,7 @@ li.narrowTopmenuUlproperty:hover > a{
 #menuList a:visited{color:#C0C0C0;}
 #menuList a:hover{
   color:#FFFFFF;
-  font-wight:bolder;
+  font-weight:bolder;
 }
 #menuList li{
   list-style-position:inside;
