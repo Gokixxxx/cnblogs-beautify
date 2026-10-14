@@ -855,9 +855,6 @@ li.recent_comment_author{
 	-o-transition:padding-left 0.3s;
 	-ms-transition:padding-left 0.3s;
 }
-.postDesc{
-  color: #EEEEEE
-}
 .post-view-count{
   color: #EEEEEE
 }
@@ -901,7 +898,7 @@ a.entrylistItemTitle:visited{color:#1ba784}
 a.entrylistItemTitle:hover{color:#1ba784;}
 
 .postDesc{
-  color: #DDDDEE
+  color: #DDDDEE;
   line-height:100%;
   font-size:0.8em;
   text-align:right;
