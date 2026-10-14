@@ -1270,6 +1270,10 @@ table {
 	background-size:16px 16px;
 	background-repeat:no-repeat;
 }
+/*"升级成为园子VIP会员"推广链接：常态色与页面底色相近（近乎隐形），hover 仍是主题全局的高亮色*/
+#commentform_title a{
+	color:#1c2739;
+}
 .commentbox_main{
   background-color:#1E3B7A;
 }
