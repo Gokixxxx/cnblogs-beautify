@@ -14,40 +14,54 @@ function sleep(time){
 
 /*回到顶部*/
 var scrolling;
+var gotoTimer=null;
+/*取消自动滚动：用户滚轮或触摸屏幕时，停止回顶/回底的动画*/
+function cancelGoto(){
+	if(gotoTimer){
+		clearTimeout(gotoTimer);
+		gotoTimer=null;
+	}
+	scrolling=0;
+}
+window.addEventListener('wheel',cancelGoto,{passive:true});
+window.addEventListener('touchmove',cancelGoto,{passive:true});
+
 function gotoTopWork(){
 	let dy = document.documentElement.scrollTop / 10; // 每次更新scrollTop改变的大小
 	if(document.documentElement.scrollTop > 0) {
 		document.documentElement.scrollTop -= Math.max(dy, 10);
-		setTimeout(() => {
+		gotoTimer=setTimeout(() => {
 			gotoTopWork();
 		}, 15);
+	}
+	else{
+		gotoTimer=null;
+		scrolling=0;
 	}
 }
 function gotoTop() {
 	if(scrolling) return;
 	scrolling=1;
 	gotoTopWork();
-	setTimeout(function(){
-		scrolling=0;
-	},800);
 }
 
 function gotoBottomWork(){
 	let dy = (document.documentElement.scrollHeight-document.documentElement.clientHeight-document.documentElement.scrollTop) / 10; 
 	if(document.documentElement.scrollHeight-document.documentElement.clientHeight-document.documentElement.scrollTop> 0) {
 		document.documentElement.scrollTop += Math.max(dy, 10);
-		setTimeout(()=>{
+		gotoTimer=setTimeout(()=>{
 			gotoBottomWork();
 		},15);
+	}
+	else{
+		gotoTimer=null;
+		scrolling=0;
 	}
 }
 function gotoBottom(){
 	if(scrolling) return;
 	scrolling=1;
 	gotoBottomWork();
-	setTimeout(function(){
-		scrolling=0;
-	},800);
 }
 </script>
 

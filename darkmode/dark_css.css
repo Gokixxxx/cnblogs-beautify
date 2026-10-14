@@ -609,7 +609,7 @@ li.narrowTopmenuUlproperty:hover > a{
 	border:0px;
 	margin:0px;
 	padding:0px;
-	border-bottom:1px solid rgba(256,256,256,0.7);
+	border-bottom:1px solid rgba(255,255,255,0.7);
 	outline:none;
 }
 .gotoBottom{
@@ -622,7 +622,7 @@ li.narrowTopmenuUlproperty:hover > a{
 	border:0px;
 	margin:0px;
 	padding:0px;
-	border-top:1px solid rgba(256,256,256,0.7);
+	border-top:1px solid rgba(255,255,255,0.7);
 	outline:none;
 }
 .menu{
