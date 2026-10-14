@@ -1319,6 +1319,10 @@ table {
 }
 
 /*评论内容*/
+/*评论区容器作为定位基准，让排序控件能钉到整行右侧*/
+#blog-comments-placeholder{
+  position:relative;
+}
 .feedback_area_title{
   padding:10px;
   margin:10px;
@@ -1329,14 +1333,13 @@ table {
   border:4px solid #1E3B7A;
   outline-style: ridge;
   font-family: "黑体","宋体","隶书","Arial";
-  position:relative;/*作为内部排序按钮的定位基准*/
 }
 /*评论排序整体（图标 + 默认/按时间/按支持数，位于标题盒内部）：
-  脱离文档流，排到标题盒右侧并垂直居中，让标题盒保持干净*/
+  脱离文档流，钉到标题行的最右侧并垂直居中，让标题盒保持干净*/
 .comment-sort{
   position:absolute;
-  left:92px;
-  top:50%;
+  right:10px;
+  top:54px;
   transform:translateY(-50%);
   white-space:nowrap;
   font-size:12px;
