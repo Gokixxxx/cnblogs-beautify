@@ -266,11 +266,11 @@ blockquote{
 	line-height:55px;
 	vertical-align:middle;
 }
-li.others:hover{
-	background-color:#c6e6e8 !important;
+li.othersInTopmentUl:hover{
+	background-color:#232323 !important;
 }
-li.others:hover > a{
-	color:#a2a212 !important;
+li.othersInTopmentUl:hover > a{
+	color:#619ac3 !important;
 }
 
 @media only screen and (max-width:870px){
