@@ -1567,22 +1567,22 @@ table {
   position:fixed;
   right:15px;
   bottom:25px;
-  background-color:#45b787;
+  background-color:#144a74;
   width:41px;
   height:20px;
   line-height:20px;
   display:inline-block;
   border:0px;
   border-radius:30%;
-  color:#F5F5F5;
+  color:#93b5cf;
   text-align:center;
   padding:0px 2.5px;
   z-index:100;
   font-size:10px !important;
 }
-#followMe{color:#F5F5F5 !important;}
+#followMe{color:#93b5cf !important;}
 #followMe:hover{
-  background-color: #45cb4a;
+  background-color: #207f4c;
 }
 
 /*****************************/
