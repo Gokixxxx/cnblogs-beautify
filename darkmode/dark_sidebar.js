@@ -383,7 +383,7 @@ else{
 }
 
 /******** 同步两个搜索框 **********/
-window.document.getElementById("q2").addEventListener("change", (event) => {
+window.document.getElementById("q2").addEventListener("input", (event) => {
 	document.getElementById("q").value = event.target.value;
 });
 
