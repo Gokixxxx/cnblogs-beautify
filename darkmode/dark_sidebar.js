@@ -401,6 +401,18 @@ window.document.getElementById("q2").addEventListener("input", (event) => {
 	document.getElementById("q").value = event.target.value;
 });
 
+/******** 把"⟲"（恢复默认排序）的悬停提示从父元素的"切换评论排序"改为自己的 **********/
+const fixDefaultSortTip = () => {
+	let el = document.getElementById("comment_default_list");
+	if(el) el.title = "恢复默认评论排序";
+};
+/*评论区是 ajax 加载的，监听容器变化，元素出现后设置*/
+const commentsPlaceholder = document.getElementById("blog-comments-placeholder");
+if(commentsPlaceholder){
+	new MutationObserver(fixDefaultSortTip).observe(commentsPlaceholder, {childList:true, subtree:true});
+}
+fixDefaultSortTip();
+
 </script>
 
 <script>

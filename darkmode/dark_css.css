@@ -1354,6 +1354,14 @@ table {
   font-size: 12px;
   column-gap: 6px;
 }
+/*"默认"实际是恢复默认排序，用重置符号 ⟲ 代替文字*/
+#comment_default_list{
+  font-size:0;
+}
+#comment_default_list::before{
+  content:"⟲";
+  font-size:13px;
+}
 .blog_comment_body{
   font-family: "楷体","宋体","Arial";
 }
