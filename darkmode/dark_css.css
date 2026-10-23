@@ -74,11 +74,23 @@ blockquote{
 	margin:0px;
 	margin-bottom:20px;
 	background:linear-gradient(to bottom, #161a26, #0f1423);
-	color:#EEEEEE;
-	border-left:5px solid #444;
+	color:#f1f0ed;
+	border-left:3.5px solid #f9f4dc !important;
 	border-top:0px;
 	border-bottom:0px;
 	border-right:0px;
+}
+/*引用块内的段落：必须带 #mainContent 前缀，否则 !important 对撞时优先级低于 #mainContent p，覆盖不了正文的 #F7F7F7*/
+#mainContent blockquote p{
+	color:#f1f0ed !important;
+}
+/*引用块内的公式（行内/独立）：覆盖下方 .mjx-chtml、.MathJax_Display 的 color:white*/
+#mainContent blockquote [data-formula],
+#mainContent blockquote [class^="mjx-"],
+#mainContent blockquote .katex,
+#mainContent blockquote .MathJax,
+#mainContent blockquote .MathJax_Display{
+	color:#f1f0ed !important;
 }
 
 /***************************************************************/
