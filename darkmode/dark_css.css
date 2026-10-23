@@ -92,6 +92,22 @@ blockquote{
 #mainContent blockquote .MathJax_Display{
 	color:#f1f0ed !important;
 }
+/*引用块的折叠按钮（JS 自动插入）：低调样式——透明底、无阴影、左对齐，
+  只显示"引用前两个字 + ▼/▲"；同时覆盖通用按钮 hover 时的放大变色效果*/
+#mainContent blockquote .ShowAndHideButton{
+	display:block;
+	width:auto;
+	background-color:transparent;
+	color:#f1f0ed;
+	box-shadow:none;
+	padding-left:0px;
+	padding-right:0px;
+}
+#mainContent blockquote .ShowAndHideButton:hover{
+	width:auto;
+	height:25px;
+	background-color:transparent;
+}
 
 /***************************************************************/
 

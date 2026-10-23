@@ -279,6 +279,41 @@ for(let el of document.querySelectorAll('.AlwaysHideButton')){
 	el.onclick=hideAndShow;
 }
 
+/*markdown > 引用块的折叠：默认收起；收起时按钮在开头，显示"引用前两个字 + ▼"；
+  展开后按钮移到末尾，只显示 ▲；再点收起后按钮回到开头。嵌套引用只处理最外层。
+  注意：本段必须放在上面两个通用 onclick 绑定循环之后，
+  否则自定义的 onclick 会被 hideAndShow 覆盖，导致第一次点击只把文字重置成 "Show"*/
+for(let el of document.querySelectorAll('#cnblogs_post_body blockquote')){
+	if(el.parentElement.closest('blockquote')) continue;
+	let btn=document.createElement("input");
+	btn.type="button";
+	btn.classList.add("ShowAndHideButton");
+	let head=(el.innerText||"").replace(/\s+/g,"").slice(0,2);
+	btn.value=head+" ▼";
+	btn.onclick=function(){
+		let collapsed=this.value.endsWith("▼");
+		let bq=this.parentElement;
+		for(let node of bq.childNodes){
+			if(node===this||!node.tagName) continue;
+			node.style.display=collapsed?"block":"none";
+		}
+		if(collapsed){/*展开：按钮移到末尾，只显示 ▲*/
+			this.value="▲";
+			bq.appendChild(this);
+		}
+		else{/*收起：按钮移回开头，恢复"前两个字 ▼"*/
+			this.value=head+" ▼";
+			bq.insertAdjacentElement("afterbegin",this);
+		}
+	};
+	el.insertAdjacentElement("afterbegin",btn);
+	/*默认收起：隐藏除按钮外的所有子元素*/
+	for(let node of el.childNodes){
+		if(node===btn||!node.tagName) continue;
+		node.style.display="none";
+	}
+}
+
 </script>
 
 <script>
