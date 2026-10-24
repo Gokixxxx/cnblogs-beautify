@@ -279,8 +279,8 @@ for(let el of document.querySelectorAll('.AlwaysHideButton')){
 	el.onclick=hideAndShow;
 }
 
-/*markdown > 引用块的折叠：默认收起；收起时按钮在开头，显示"引用前两个字 + ▼"；
-  展开后按钮移到末尾，只显示 ▲；再点收起后按钮回到开头。嵌套引用只处理最外层。
+/*markdown > 引用块的折叠：默认展开，展开时不显示任何按钮；点击最左侧竖杠可切换折叠/展开。
+  收起后开头显示"引用前两个字 + ▼"按钮，点按钮或竖杠都能展开。嵌套引用只处理最外层。
   注意：本段必须放在上面两个通用 onclick 绑定循环之后，
   否则自定义的 onclick 会被 hideAndShow 覆盖，导致第一次点击只把文字重置成 "Show"*/
 for(let el of document.querySelectorAll('#cnblogs_post_body blockquote')){
@@ -290,28 +290,41 @@ for(let el of document.querySelectorAll('#cnblogs_post_body blockquote')){
 	btn.classList.add("ShowAndHideButton");
 	let head=(el.innerText||"").replace(/\s+/g,"").slice(0,2);
 	btn.value=head+" ▼";
-	btn.onclick=function(){
-		let collapsed=this.value.endsWith("▼");
-		let bq=this.parentElement;
-		for(let node of bq.childNodes){
-			if(node===this||!node.tagName) continue;
-			node.style.display=collapsed?"block":"none";
+	/*收起：隐藏内容，按钮回到开头并显示*/
+	function collapse(){
+		for(let node of el.childNodes){
+			if(node===btn||!node.tagName) continue;
+			node.style.display="none";
 		}
-		if(collapsed){/*展开：按钮移到末尾，只显示 ▲*/
-			this.value="▲";
-			bq.appendChild(this);
-		}
-		else{/*收起：按钮移回开头，恢复"前两个字 ▼"*/
-			this.value=head+" ▼";
-			bq.insertAdjacentElement("afterbegin",this);
-		}
-	};
-	el.insertAdjacentElement("afterbegin",btn);
-	/*默认收起：隐藏除按钮外的所有子元素*/
-	for(let node of el.childNodes){
-		if(node===btn||!node.tagName) continue;
-		node.style.display="none";
+		btn.style.display="block";
+		btn.value=head+" ▼";
+		el.insertAdjacentElement("afterbegin",btn);
+		el.classList.add("bq_collapsed");
 	}
+	/*展开：显示内容，按钮隐藏*/
+	function expand(){
+		for(let node of el.childNodes){
+			if(node===btn||!node.tagName) continue;
+			node.style.display="block";
+		}
+		btn.style.display="none";
+		el.classList.remove("bq_collapsed");
+	}
+	/*阻止冒泡，否则展开后事件传到下面的竖杠监听，点在按钮左缘附近会被误当成点竖杠又收起*/
+	btn.onclick=function(e){
+		e.stopPropagation();
+		expand();
+	};
+	/*点击最左侧竖杠（含左 padding，约 25px 宽）切换折叠状态：
+	  展开时点击→收起；收起时点击→展开（与按钮等价）*/
+	el.addEventListener("click",function(e){
+		if(e.clientX-el.getBoundingClientRect().left>25) return;
+		if(el.classList.contains("bq_collapsed")) expand();
+		else collapse();
+	});
+	/*默认展开：内容不动，按钮隐藏*/
+	btn.style.display="none";
+	el.insertAdjacentElement("afterbegin",btn);
 }
 
 </script>

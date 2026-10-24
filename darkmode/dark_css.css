@@ -108,6 +108,13 @@ blockquote{
 	height:25px;
 	background-color:transparent;
 }
+/*引用块处于折叠状态时（JS 会加 bq_collapsed 类）：按钮文字和左侧竖杠变灰*/
+#mainContent blockquote.bq_collapsed{
+	border-left:3.5px solid #74787a !important;
+}
+#mainContent blockquote.bq_collapsed .ShowAndHideButton{
+	color:#74787a;
+}
 
 /***************************************************************/
 
