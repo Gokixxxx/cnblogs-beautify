@@ -37,4 +37,13 @@ update:
   - 侧边栏日历"今日"改为金色系配色（圆圈背景 + 文字辉光 + 外圈光晕）
   - 修复日历月份标题被格子宽度挤压换行的问题
   - 清理无效 CSS：.postDesc 重复定义及缺失分号、被忽略的 vertical-align、font-wight 拼写错误、rgba(256,...) 无效值
+
+- 2026-10-24
+
+  Gokix: (darkmode)
+
+  - 引用块文字与内部公式改为米白色 #f1f0ed（需用 #mainContent 前缀压住 #mainContent p 的 !important 和 .mjx-chtml 的 color:white）
+  - 引用块左侧竖杠改为 3.5px #f9f4dc
+  - markdown 的 > 引用块自动获得折叠功能：默认展开，点击左侧竖杠可切换折叠/展开
+  - 折叠后开头显示"引用前两个字 + ▼"按钮，按钮透明低调、左对齐，折叠态按钮与竖杠变灰 #74787a；嵌套引用只处理最外层
   
